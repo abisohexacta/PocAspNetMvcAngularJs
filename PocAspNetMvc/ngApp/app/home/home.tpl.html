@@ -1,0 +1,61 @@
+﻿
+<div class="row">
+    <div class="upload-picture">
+        <div>
+            <div ng-message="required">
+                <i class="fa fa-times-circle"></i>Debés cargar tu foto
+            </div>
+        </div>
+        <div ng-hide="vm.container.cameraView">
+            <div class="take-photo" ng-hide="vm.container.cameraView">
+                <label class="pic">
+                    <span class="content-image"><img ng-src="{{vm.container.userImg.image.resized.dataURL}}" alt="subir imagen" id="userPhoto" ng-show="vm.container.userImg.image" /></span>
+                    <input id="inputImage"
+                           type="file"
+                           accept="image/*"
+                           image="vm.container.userImg.image"
+                           resize-max-height="1200"
+                           resize-max-width="1000"
+                           resize-quality="1"
+                           allowed-extensions="JPG,jpeg,jpg,png,gif"
+                           max-size="2097152|2 MB"
+                           ga-onclick-category="Marlboro/Pasaporte/"
+                           ga-onclick-event="BTN/CargarFoto" />
+                </label>
+                <br />
+                <button ng-click="vm.container.initCamera()" class="btn btn-secundary" type="button">Tomar Foto</button>
+            </div>
+            <div class="spinner" ng-show="uploadingPhotoSpinnerVisible">
+                <div id="circularG">
+                    <div id="circularG_1" class="circularG"></div>
+                    <div id="circularG_2" class="circularG"></div>
+                    <div id="circularG_3" class="circularG"></div>
+                    <div id="circularG_4" class="circularG"></div>
+                    <div id="circularG_5" class="circularG"></div>
+                    <div id="circularG_6" class="circularG"></div>
+                    <div id="circularG_7" class="circularG"></div>
+                    <div id="circularG_8" class="circularG"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="vm.container.cameraView" class="options">
+        <div id="my_camera" class="camara" ng-show="vm.container.cameraView"></div>
+        <button class="btn btn-secundary btn-camara" ng-click="vm.container.takePicture()">Guardar foto</button>
+    </div>
+    <button ng-disabled="vm.container.userImg.image.resized.dataURL == vm.container.defaultImage" ng-click="savePicture(vm.container.userImg.image)" class="btn btn-send">Next Step</button>
+    <div class="spinner" ng-show="vm.container.savingPhotoSpinnerVisible">
+        <div id="circularG">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div>
+    </div>
+    <p class="msg-error" ng-show="vm.container.errorAppeared"> Error! Por favor vuelve a intentarlo</p>
+</div>
+
