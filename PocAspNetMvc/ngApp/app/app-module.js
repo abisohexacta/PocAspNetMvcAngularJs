@@ -7,7 +7,7 @@
      *
      */
     angular
-      .module('camApp', [
+      .module('app', [
         /*
          * Angular modules
          */
@@ -17,7 +17,7 @@
          */
          'ui.bootstrap',
          'ui.router',
-         'imageupload',
+         'ngCroppie',
         /*
          * Feature areas
          */

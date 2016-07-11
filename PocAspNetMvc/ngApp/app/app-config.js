@@ -1,6 +1,6 @@
 //'use strict';
 //angular
-//.module('audigraphics')
+//.module('app')
 //.config([
 //    '$animateProvider', function ($animateProvider) {
 //        $animateProvider.classNameFilter(/^((?!(ui-grid-menu)).)*$/);

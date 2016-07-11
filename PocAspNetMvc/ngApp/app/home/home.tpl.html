@@ -1,61 +1,35 @@
-﻿
-<div class="row">
-    <div class="upload-picture">
-        <div>
-            <div ng-message="required">
-                <i class="fa fa-times-circle"></i>Debés cargar tu foto
-            </div>
+﻿<div class='row'>
+        <div class='col-xs-12'>
+          <h1>ng-croppie </h1>
+          <hr>
+          <label>Load image from within your folder structure: </label>
+          <br>
+          <button class='btn btn-info' ng-click='theImage1 = "ngApp/assets/images/error-img.png"'>Load Image 1</button>
+            <button class='btn btn-info' ng-click='theImage1 = "ngApp/assets/images/error-img.png"'>Load Image 2</button>
+          <br><br>
+          <label>Or upload your own: </label>
+          <input id='fileInput' style='width: 400px' class='form-control' type='file'/>
         </div>
-        <div ng-hide="vm.container.cameraView">
-            <div class="take-photo" ng-hide="vm.container.cameraView">
-                <label class="pic">
-                    <span class="content-image"><img ng-src="{{vm.container.userImg.image.resized.dataURL}}" alt="subir imagen" id="userPhoto" ng-show="vm.container.userImg.image" /></span>
-                    <input id="inputImage"
-                           type="file"
-                           accept="image/*"
-                           image="vm.container.userImg.image"
-                           resize-max-height="1200"
-                           resize-max-width="1000"
-                           resize-quality="1"
-                           allowed-extensions="JPG,jpeg,jpg,png,gif"
-                           max-size="2097152|2 MB"
-                           ga-onclick-category="Marlboro/Pasaporte/"
-                           ga-onclick-event="BTN/CargarFoto" />
-                </label>
-                <br />
-                <button ng-click="vm.container.initCamera()" class="btn btn-secundary" type="button">Tomar Foto</button>
-            </div>
-            <div class="spinner" ng-show="uploadingPhotoSpinnerVisible">
-                <div id="circularG">
-                    <div id="circularG_1" class="circularG"></div>
-                    <div id="circularG_2" class="circularG"></div>
-                    <div id="circularG_3" class="circularG"></div>
-                    <div id="circularG_4" class="circularG"></div>
-                    <div id="circularG_5" class="circularG"></div>
-                    <div id="circularG_6" class="circularG"></div>
-                    <div id="circularG_7" class="circularG"></div>
-                    <div id="circularG_8" class="circularG"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div ng-show="vm.container.cameraView" class="options">
-        <div id="my_camera" class="camara" ng-show="vm.container.cameraView"></div>
-        <button class="btn btn-secundary btn-camara" ng-click="vm.container.takePicture()">Guardar foto</button>
-    </div>
-    <button ng-disabled="vm.container.userImg.image.resized.dataURL == vm.container.defaultImage" ng-click="savePicture(vm.container.userImg.image)" class="btn btn-send">Next Step</button>
-    <div class="spinner" ng-show="vm.container.savingPhotoSpinnerVisible">
-        <div id="circularG">
-            <div id="circularG_1" class="circularG"></div>
-            <div id="circularG_2" class="circularG"></div>
-            <div id="circularG_3" class="circularG"></div>
-            <div id="circularG_4" class="circularG"></div>
-            <div id="circularG_5" class="circularG"></div>
-            <div id="circularG_6" class="circularG"></div>
-            <div id="circularG_7" class="circularG"></div>
-            <div id="circularG_8" class="circularG"></div>
-        </div>
-    </div>
-    <p class="msg-error" ng-show="vm.container.errorAppeared"> Error! Por favor vuelve a intentarlo</p>
 </div>
-
+<br><br>
+<div class='row' ng-if='theImage1 != undefined'>
+    <div class='col-xs-12 col-md-6' style='padding: 20px'>
+        <center>
+            <h2>Image</h2>
+            <ng-croppie ng-model='output'
+                        update='onUpdate'
+                        boundry="{w: 400, h: 400}"
+                        viewport="{w: 300, h:300}"
+                        mousezoom="true" zoom="true" type="circle"
+                        src="theImage1">
+            </ng-croppie>
+        </center>
+    </div>
+    <div class='col-xs-12 col-md-6' style='padding: 20px'>
+        <center>
+            <h2>Preview</h2>
+            <br><br>
+            <img src='{{output}}'/>
+        </center>
+    </div>
+</div>

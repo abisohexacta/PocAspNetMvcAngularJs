@@ -3,9 +3,9 @@
   <Nodes>
     <Node Id="PocAspNetMvc" Label="PocAspNetMvc" Category="Project" />
     <Node Id="Angular.UI.Bootstrap 1.3.3" Label="Angular.UI.Bootstrap 1.3.3" Category="Package" />
+    <Node Id="Angular.UI.UI-Router 0.2.18" Label="Angular.UI.UI-Router 0.2.18" Category="Package" />
     <Node Id="AngularJS.Animate 1.5.7" Label="AngularJS.Animate 1.5.7" Category="Package" />
     <Node Id="AngularJS.Core 1.5.7" Label="AngularJS.Core 1.5.7" Category="Package" />
-    <Node Id="AngularJS.Route 1.5.7" Label="AngularJS.Route 1.5.7" Category="Package" />
     <Node Id="Antlr 3.4.1.9004" Label="Antlr 3.4.1.9004" Category="Package" />
     <Node Id="bootstrap 3.0.0" Label="bootstrap 3.0.0" Category="Package" />
     <Node Id="EntityFramework 6.1.3" Label="EntityFramework 6.1.3" Category="Package" />
@@ -37,7 +37,6 @@
   </Nodes>
   <Links>
     <Link Source="AngularJS.Animate 1.5.7" Target="AngularJS.Core 1.5.7" Category="Package Dependency" />
-    <Link Source="AngularJS.Route 1.5.7" Target="AngularJS.Core 1.5.7" Category="Package Dependency" />
     <Link Source="jQuery.Validation 1.11.1" Target="jQuery 1.10.2" Category="Package Dependency" />
     <Link Source="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Target="Microsoft.AspNet.Identity.Core 2.2.1" Category="Package Dependency" />
     <Link Source="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Target="EntityFramework 6.1.3" Category="Package Dependency" />
@@ -84,8 +83,8 @@
     <Link Source="WebGrease 1.5.2" Target="Antlr 3.4.1.9004" Category="Package Dependency" />
     <Link Source="WebGrease 1.5.2" Target="Newtonsoft.Json 6.0.4" Category="Package Dependency" />
     <Link Source="PocAspNetMvc" Target="Angular.UI.Bootstrap 1.3.3" Category="Installed Package" />
+    <Link Source="PocAspNetMvc" Target="Angular.UI.UI-Router 0.2.18" Category="Installed Package" />
     <Link Source="PocAspNetMvc" Target="AngularJS.Animate 1.5.7" Category="Installed Package" />
-    <Link Source="PocAspNetMvc" Target="AngularJS.Route 1.5.7" Category="Installed Package" />
     <Link Source="PocAspNetMvc" Target="bootstrap 3.0.0" Category="Installed Package" />
     <Link Source="PocAspNetMvc" Target="Microsoft.AspNet.Identity.EntityFramework 2.2.1" Category="Installed Package" />
     <Link Source="PocAspNetMvc" Target="Microsoft.AspNet.Identity.Owin 2.2.1" Category="Installed Package" />

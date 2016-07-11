@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('camApp')
+        .module('app')
         .config(config);
 
     config.$inject = ['$urlRouterProvider', '$httpProvider'];

@@ -1,6 +1,6 @@
 //'use strict';
 //angular
-//  .module('audigraphics')
+//  .module('app')
 //  .run(runBlock);
 
 //runBlock.$inject = ['bootstrap3ElementModifier', 'validator'];

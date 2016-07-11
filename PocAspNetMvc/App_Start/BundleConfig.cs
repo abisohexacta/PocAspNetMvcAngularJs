@@ -16,8 +16,8 @@ namespace PocAspNetMvc
                         "~/Scripts/angular-animate.min.js",
                         "~/Scripts/angular-ui-router.min.js",
                         "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
-                        "~/Scripts/imageupload.js",
-                        "~/Scripts/webcam.js",
+                        "~/Scripts/croppie.js",
+                        "~/Scripts/ng-croppie.js",
                         "~/ngApp/app/app-module.js",
                         "~/ngApp/index-routes.js",
                         "~/ngApp/app/app-config.js",
@@ -50,7 +50,10 @@ namespace PocAspNetMvc
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/croppie.css",
+                      "~/Content/ng-croppie.css"
+                      ));
         }
     }
 }
